@@ -1,0 +1,5 @@
+@Library('Jenkins-shared-library') _
+
+echoPipeline {
+  message = "I tried to ping a thousand times."
+}
