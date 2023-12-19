@@ -1,0 +1,22 @@
+@Library('Jenkins-shared-library') _
+
+pipeline {
+
+  agent any
+  stages {
+    stage('Call Library with an argument') {
+        steps {
+            script {
+              helloArgs('Jenkins')
+            }
+        }
+    }
+    stage('Call additional Library Functions') {
+      steps {
+        script {
+          helloArgs.goodbyeWorld('Jenkins')
+        }
+      }
+    }
+  }
+}
