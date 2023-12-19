@@ -3,7 +3,7 @@ pipeline {
 
   stages {
     stage ('stage-one') {
-        stpes {
+        steps {
             echo "Hello word!"
         }
     }
@@ -17,7 +17,7 @@ pipeline {
         }
     }
     stage ('stage-two') {
-        stpes {
+        steps {
             echo "Hello from step-two!"
         }
     }
