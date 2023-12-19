@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage (' stage-1') {
+            steps {
+                sh ' echo "Hello Word" '
+            }
+        }
+
+        stage (' stage-2') {
+            when { branch 'main' }
+            steps {
+                echo 'Hello from main branch!'
+            }
+        }
+    }
+}
