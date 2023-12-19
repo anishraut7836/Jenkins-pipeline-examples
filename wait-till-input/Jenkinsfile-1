@@ -1,0 +1,29 @@
+pipeline {
+  agent any
+
+  stages {
+    stage ('stage-one') {
+        steps {
+            echo "Hello word!"
+        }
+    }
+    stage ('stage-approve') {
+        when {
+            branch 'main'
+        }
+        options {
+            timeout(time: 1, unit: 'MINUTES') // NANOSECONDS, MICROSECONDS, MILLISECONDS, SECONDS, MINUTES, HOURS, DAYS
+        }
+        steps {
+            input message: "Run the stage-two?"
+
+        }
+    }
+    stage ('stage-two') {
+        steps {
+            echo "Hello from step-two!"
+        }
+    }
+  }
+
+}
