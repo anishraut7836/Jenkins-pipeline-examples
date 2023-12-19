@@ -1,0 +1,26 @@
+pipeline {
+  agent any
+
+  stages {
+    stage ('stage-one') {
+        stpes {
+            echo "Hello word!"
+        }
+    }
+    stage ('stage-approve') {
+        options {
+            timeout(time: 1, unit: 'MINTUES')
+        }
+        steps {
+            input message: "Run the stage-two?"
+
+        }
+    }
+    stage ('stage-two') {
+        stpes {
+            echo "Hello from step-two!"
+        }
+    }
+  }
+
+}
