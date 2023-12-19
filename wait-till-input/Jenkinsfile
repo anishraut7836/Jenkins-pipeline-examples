@@ -9,7 +9,7 @@ pipeline {
     }
     stage ('stage-approve') {
         options {
-            timeout(time: 1, unit: 'MINTUES')
+            timeout(time: 1, unit: 'MINUTES') // NANOSECONDS, MICROSECONDS, MILLISECONDS, SECONDS, MINUTES, HOURS, DAYS
         }
         steps {
             input message: "Run the stage-two?"
